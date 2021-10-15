@@ -1,0 +1,54 @@
+- a navigation guard is funcnality in vue-router which we can use to do somthing on before or after route changis 
+
+- we can use such guards to execute some code to run some logic and check if user is alloud to visit those routes or not. as name suggest navigation guards use to guard our routes 
+
+- nav guard is usefull when we create authentication and authorization in our apps also in places where we don't want user to navigate without filling and submiting whole form etc.
+
+- a navigation guard in vue-router is notthing but just a function provided by vue-router which will be execute on any route change
+
+
+
+// come hear after going throuth entire app and description 
+
+- we can also pass meta key in our route object which can be any data type which will use to defien extra meta info with route and can be accessable inside meta feald in route object  
+
+
+- beforeEach: 
+1) register at router object level
+2) will give to, from, next as param
+3) will execute on befor every route change
+
+- beforeEnter
+1) register at per route level
+2) will give to, from, next as param
+3) will execute only before we want to enter route where we registed it
+
+- beforeRouetEnter
+1) register at per component level
+2) will give to, from, next as param
+3) will execute only before we want to enter component where we registed it
+
+- beforeRouteUpdate
+1) register at per component level
+2) will give to, from, next as param
+3) will execute only before we want to enter same route with diffrent params
+
+- befroeRouteLeave
+1) register at per component level
+2) will give to, from, next as param
+3) will execute only before we want to leave component where we registed it
+
+- afterEach
+1) register at router object level
+2) will give to, from as param
+3) will execute on after every route change
+
+
+- we alwase should create pages or views folder in our app and store all the routing components which will load by vue-router and not use as components in any other component so we have clear distinction between our reusable components and our pages in app
+
+- also we should create saprate router folder where we sholds create index.js file which will contain all our router specific data like imports of views createRouter configration, routes etc and also export router object so we can import and use it in main.js for app.use() 
+
+- we can also create modules folder which will contain diffrent modules related files and that files will have only that module related routes of our app and we can export that routes import it in router/index.js and spread it in our routes array so we will save index.js to fill with lots of routes and we can saprate routes module related
+
+- we can also create guards folder in router folder where we can create diffrent js files which will contain difffent guards our app need and we can export those guard to use in our routes
+
