@@ -20,10 +20,20 @@ const router = createRouter({
                 console.log("beforeEnter", to, from);
                 next()
             }
-        }
+        },
         // so hear we also have other kind of guard which will only execute per route level which is beforeEnter as name suggest it will be execute before we enter route where we define it
         // it also get 3 args to, from and next which is the same like beforeEach
         // as you can see in console beforeEnter will only execute in user because we define it only in user route
+
+
+        // hear we are simulating api call with setTimeOut and when this promise resolve then we will be able to do to from page or we can also reject navigating by passing next(false) 
+        {path: '/async-req-route', name: "async", component: User,
+            beforeEnter(to, from, next){
+                setTimeout(async () => await next(),5000)
+            }
+        }
+        // keep in mind we can do this but we should not do it in every route only few routs because user have to wait for navigation until promise resolve or reject even in spa so do it only when we really need it 
+
     ]
 })
 

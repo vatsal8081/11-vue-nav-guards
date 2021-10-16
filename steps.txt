@@ -44,6 +44,15 @@
 3) will execute on after every route change
 
 
+- we can pass array of functions in beforeEnter guard to validate multiple condations ex
+
+{path:'/account', component: Acconnt, name:"account", 
+    beforeEact: [isLogedIn, isAlloued] 
+}
+hear beforeEach is conatin array with n number of functions which use to guard route
+
+- our nav guards also can be asynchronous that mins we can call apis and other asynchronous task can also done in it ans when it's resolve then and only then view will be visible. check async-req-route route in main js
+
 - we alwase should create pages or views folder in our app and store all the routing components which will load by vue-router and not use as components in any other component so we have clear distinction between our reusable components and our pages in app
 
 - also we should create saprate router folder where we sholds create index.js file which will contain all our router specific data like imports of views createRouter configration, routes etc and also export router object so we can import and use it in main.js for app.use() 
